@@ -1,6 +1,6 @@
 <?php include("includes/header.php"); ?>
 
-    <li><a href="index.php">Home</a></li>
+    <li><a href="index.php">Accueil</a></li>
 
     <?php if(isset($_GET['p'])) : ?>
         <?php switch($_GET['p']) :

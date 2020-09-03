@@ -5,8 +5,6 @@
     </div>
 <?php endif; ?>
 
-
-
 <!-- Formulaire de connexion -->
 <form method="post">
     <?= $form->input('username', 'pseudo'); ?>
