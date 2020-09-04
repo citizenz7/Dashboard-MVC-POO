@@ -37,6 +37,13 @@
             $this->render('users.login', compact('form', 'errors'));
 
         }
+
+        // Déconnecter le user de l'admin
+        public function logout() {
+          $this->render('users.logout');
+        }
+
+
     }
 
  ?>

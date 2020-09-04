@@ -44,7 +44,7 @@
                     'datefingarantie' => $_POST['datefingarantie'],
                     'category_id' => $_POST['category_id'],
                     'prix' => $_POST['prix'],
-                    'conseilsentretien' => $_POST['conseilentretien'],
+                    'conseilsentretien' => $_POST['conseilsentretien'],
                     'phototicketachat' => $_POST['phototicketachat'],
                     'manuelutilisation' => $_POST['manuelutilisation']
                 ]);
@@ -87,7 +87,7 @@
                   'datefingarantie' => $_POST['datefingarantie'],
                   'category_id' => $_POST['category_id'],
                   'prix' => $_POST['prix'],
-                  'conseilsentretien' => $_POST['conseilentretien'],
+                  'conseilsentretien' => $_POST['conseilsentretien'],
                   'phototicketachat' => $_POST['phototicketachat'],
                   'manuelutilisation' => $_POST['manuelutilisation']
                 ]);

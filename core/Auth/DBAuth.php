@@ -4,9 +4,6 @@
 
     use Core\Database\Database;
 
-
-
-
     class DBAuth{
 
         //stocker la connexion à la BDD au niveau de l'instance
@@ -20,8 +17,6 @@
             $this->db = $db;
         }
 
-
-
         /**
          * Connaitre l'identifiant de l'utilisateur
          * Si l'utilisateur est connecté on retourne son id
@@ -34,11 +29,9 @@
             return false;
         }
 
-
-
         /**
          * Permettre à l'utilisateur de se connecter
-         * Verifier qu'on à un utilisateur et que le mot de passe entré dans le formulaire 
+         * Verifier qu'on à un utilisateur et que le mot de passe entré dans le formulaire
          * correspond au mot de passe de la BDD
          * et on stocke l'id de l'utilisateur dans une session
          * @param  $username
@@ -57,8 +50,6 @@
             return false;
         }
 
-
-
         /**
          * Vérifier que l'utilisateur est connecté
          * @return $_SESSION['auth']
@@ -68,7 +59,14 @@
         }
 
 
-    }
+        /**
+         * Déconnexion de l'utilisateur
+         * avec la fonction php session_destroy
+        */
+        public function logout() {
+          return session_destroy();
+        }
 
+    }
 
 ?>

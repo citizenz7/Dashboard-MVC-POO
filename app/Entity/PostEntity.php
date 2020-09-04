@@ -4,8 +4,6 @@
 
     use Core\Entity\Entity;
 
-
-
     class PostEntity extends Entity{
 
         /**
@@ -15,8 +13,6 @@
         public function getUrl(){
           return 'index.php?p=posts.single&id=' . $this->id;
         }
-
-
 
         /**
          * Affichage de l'extrait et ajout du lien de l'article
@@ -28,6 +24,5 @@
           return $html;
         }
     }
-
 
 ?>

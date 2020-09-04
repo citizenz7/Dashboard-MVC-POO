@@ -3,23 +3,16 @@
     use Core\Config;
     use Core\Database\MysqlDatabase;
 
-
-
-
     class App{
 
         //Propriété qui sauvegarde la connexion à la BDD
-        public $title = 'mon super blog';
+        public $title = 'ACS Dashboard : les beaux produits';
 
-
-        //Stocker l'intance de configuration de connexion à la BDD 
+        //Stocker l'intance de configuration de connexion à la BDD
         private $db_instance;
-
 
         //Créer la propriété qui stockera l'instance unique
         private static $_instance;
-
-
 
         /**
          * Méthode statique qui permet d'instancier ou de récupérer l'instance unique
@@ -35,9 +28,8 @@
         }
 
 
-
         /**
-         * Chargement de l'autoloader contenu dans le dossier app et core 
+         * Chargement de l'autoloader contenu dans le dossier app et core
          * avec la méthode register de la class Autoloader
          */
         public static function load(){
@@ -51,7 +43,6 @@
         }
 
 
-
         /**
          * permettre de faire des instances de class plus facilement
          * @param  $name
@@ -61,7 +52,6 @@
             $class_name = '\\App\\Table\\' . ucfirst($name) . 'Table';   // '\\App\\Tables\\' permet de forcer le namespace complet
             return new $class_name($this->getDb());
         }
-
 
 
         /**
@@ -79,6 +69,5 @@
             return $this->db_instance;
         }
     }
-
 
 ?>

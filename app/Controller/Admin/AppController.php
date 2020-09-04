@@ -17,7 +17,8 @@
             $app = App::getInstance();
             $auth = new DBAuth($app->getDb());
             if(!$auth->logged()){
-                $this ->forbidden();
+                //$this ->forbidden();
+                header('Location: index.php?p=users.login');
             }
         }
     }

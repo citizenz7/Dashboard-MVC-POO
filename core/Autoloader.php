@@ -2,7 +2,6 @@
 
   namespace Core;
 
-
   /**
    * Class Autoloader
    * @package Core
@@ -15,8 +14,6 @@
       static function register(){
           spl_autoload_register(array(__CLASS__, 'autoload'));
       }
-
-
 
       /**
        * Inclue le fichier correspondant à notre classe

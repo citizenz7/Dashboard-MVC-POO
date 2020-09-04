@@ -9,7 +9,6 @@
         //Stocker le nom de la table
         protected $table;
 
-
         //stocker la connexion à la BDD au niveau de l'instance
         protected $db;
 

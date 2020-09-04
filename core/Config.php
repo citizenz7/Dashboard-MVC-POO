@@ -1,14 +1,15 @@
 <?php
 
+    //Espace de nom : regroupement des classes, functions, constantes, ...
+    // dans un "dossier"
     namespace Core;
 
     class Config{
 
-        //Créer un tableau vide qui contiendra les données de configuration
+        //On crée un tableau vide qui contiendra les données de configuration
         private $settings = [];
 
-
-        //Créer la propriété qui stockera l'instance unique
+        //On crée la propriété qui stockera l'instance unique
         private static $_instance;
 
         /**
@@ -24,7 +25,6 @@
             return self::$_instance;
 
         }
-
 
         /**
          * Lire le ficher de configuration et ajouter les données de configuration à la propriété settings
