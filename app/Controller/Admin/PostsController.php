@@ -67,8 +67,6 @@
         }
 
 
-
-
         /**
          * Modifier un article
          * @return Contenu html
@@ -124,6 +122,5 @@
         }
 
     }
-
 
 ?>

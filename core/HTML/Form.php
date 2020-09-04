@@ -2,24 +2,19 @@
 
   namespace Core\HTML;
 
-
-
   class Form{
 
       public $data = array();   //stocke les données dans un tableau
       public $surround = 'p';
 
-
-
       //Constructeur
       /**
-       * Constructeur 
+       * Constructeur
        * @param array $data  optionnel les données
        */
       public function __construct($data = array()){
         $this->data = $data;
       }
-
 
 
       /**
@@ -30,8 +25,6 @@
       protected function surround($html){
         return "<{$this->surround}>$html</{$this->surround}>";   //ajouter les accolades pour que la variable soit interprété par les quotes
       }
-
-
 
       /**
        * Stocker la valeur de l'index (si celui-ci existe) du tableau en cours
@@ -48,8 +41,6 @@
           }
       }
 
-
-
       /**
        * Afficher les champs du formulaires
        * @param  $name  string
@@ -65,8 +56,7 @@
               '<input type="'. $type . '" name="' . $name . '" value="' . $this->getValue($name) .'"/>'
           );
       }
-
-
+      
 
       /**
        * Modifier la méthode qui affiche le bouton submit du formulaires

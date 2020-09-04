@@ -4,7 +4,6 @@
 
   class BootstrapForm extends Form{
 
-
       /**
        * Modifier la méthode qui ajoute des balises html
        * @param  $html  Balise html
@@ -13,7 +12,6 @@
       protected function surround($html){
           return "<div class=\"form-group\">$html</div>";
       }
-
 
 
       /**
@@ -41,8 +39,6 @@
       }
 
 
-
-
       /**
        * Définir les champs sélect
        * @param  $name
@@ -68,8 +64,6 @@
         return $this->surround($label . $input);
     }
 
-
-
       /**
        * Modifier la méthode qui affiche le bouton submit du formulaires
        * @return string
@@ -79,6 +73,5 @@
       }
 
   }
-
 
  ?>
