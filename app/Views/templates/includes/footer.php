@@ -3,7 +3,7 @@
             </div>
         </nav>
 
-        <div class="container">
+        <div class="container" style="min-height: 100vh;">
             <div class="starter-template" style="padding-top: 100px; padding-bottom: 70px;">
                 <?php
                 /**
