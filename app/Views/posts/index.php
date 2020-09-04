@@ -15,7 +15,7 @@
 
 
 	<div class="col-sm-4">
-	    <ul>
+	    <ul class="list">
 	    	<!-- AFFICHER TOUTES LES CATEGORIES -->
 	    	<?php foreach ($categories as $categorie) : ?>
             	<li><a href="<?= $categorie->url; ?>"><?= $categorie->titre; ?></a></li>
@@ -23,10 +23,3 @@
 	    </ul>
 	</div>
 </div>
-
-
-
-
-
-
-

@@ -4,7 +4,7 @@
         </nav>
 
         <div class="container">
-            <div class="starter-template" style="padding-top: 100px">
+            <div class="starter-template" style="padding-top: 100px; padding-bottom: 70px;">
                 <?php
                 /**
                  * variable qui contient le contenu des pages
@@ -13,5 +13,17 @@
                 ?>
             </div>
         </div><!-- /.container -->
+
+        <div class="container-fluid" style="background-color: black; color: grey;">
+          <div class="container">
+            <div class="row">
+              <div class="col" style="padding: 15px 15px 50px 15px;">
+                  <span style="font-weight: bold; font-size: 16px;">ACS Dasboard - MVC/POO</span>
+                  <br>
+                <span style="font-size: 12px;">&copy; 2020 - Emma, Sylvain, Olivier</span>
+              </div>
+            </div>
+          </div>
+        </div>
     </body>
 </html>
