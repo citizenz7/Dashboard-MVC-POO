@@ -11,8 +11,51 @@
                  */
                 echo $content;
                 ?>
+                <hr>
+                <canvas id="myChart" height="75"></canvas>
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['0-50 €', '50-100 €', '100-250 €', '250-500 €', '500-1000 €', '1000-2500 €'],
+        datasets: [{
+            label: 'Prix des produits',
+            data: [1, 2, 3, 1, 2, 1],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+      }
+      });
+      </script>
+
             </div>
         </div><!-- /.container -->
+
 
         <div class="container-fluid" style="background-color: black; color: grey;">
           <div class="container">

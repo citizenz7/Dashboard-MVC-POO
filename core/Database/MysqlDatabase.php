@@ -4,8 +4,6 @@
 
     use \PDO;
 
-
-
     class MysqlDatabase extends Database{
 
         //Initialiser les paramètres de connexion à la BDD
@@ -14,10 +12,8 @@
         private $db_pass;
         private $db_host;
 
-
         //stocker les paramètres de connexions
         private $pdo;
-
 
 
         /**
@@ -35,7 +31,6 @@
             $this->db_pass = $db_pass;
             $this->db_host = $db_host;
         }
-
 
 
         /**
@@ -59,7 +54,6 @@
 
             return $this->pdo;
         }
-
 
 
         /**
@@ -99,7 +93,6 @@
             }
             return $datas;  //récupérer les résultats
         }
-
 
 
         /**
@@ -143,7 +136,6 @@
         }
 
 
-
         /**
          * Récupérer l'id du dernier article ajouté dans la BDD
          * @return int
@@ -153,7 +145,6 @@
         }
 
     }
-
 
 
 ?>
