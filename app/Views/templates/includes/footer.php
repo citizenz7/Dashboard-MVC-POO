@@ -12,6 +12,32 @@
                 echo $content;
                 ?>
                 <hr>
+
+<canvas id="myChart1" height="75"></canvas>
+<script>
+var ctx = document.getElementById('myChart1').getContext('2d');
+var chart = new Chart(ctx, {
+  // The type of chart we want to create
+  type: 'line',
+
+  // The data for our dataset
+  data: {
+      labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin'],
+      datasets: [{
+          label: 'Evolution des ventes sur le premier semestre 2020',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [8, 10, 7, 8, 17, 24]
+      }]
+  },
+
+  // Configuration options go here
+  options: {}
+});
+</script>
+
+                <hr>
+
                 <canvas id="myChart" height="75"></canvas>
       <script>
       var ctx = document.getElementById('myChart').getContext('2d');
