@@ -1,7 +1,7 @@
 <?php
 
     //Constante qui définit la racine de l'application
-		define('ROOT', dirname(__DIR__));
+    define('ROOT', dirname(__DIR__));
 
     //Chargement de la class App
     require ROOT . '/app/App.php';
