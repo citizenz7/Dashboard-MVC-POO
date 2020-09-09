@@ -2,9 +2,9 @@
 
 Base d'un projet de blog en php orienté objet avec la structure MVC
 
-## 1 - Créer une structure de fichier comme ci-dessous :
+### 1 - Créer une structure de fichier comme ci-dessous :
 
-    ### App : dossier contenant toutes les class spécifique de l'application. C'est le corps de l'application qui permet de tout gérer.
+    #### App : dossier contenant toutes les class spécifique de l'application. C'est le corps de l'application qui permet de tout gérer.
 
         - Dossier Controller : Dossier contenant toute la logique de l'application
             - Dossier Admin : contient les class qui gèrent l'affichage du front end
@@ -37,9 +37,9 @@ Base d'un projet de blog en php orienté objet avec la structure MVC
 
         - class Autoloader : autoloading des class spécifiques au dossier app
 
-    ### Config : dossier contenant les éléments de configuration de la base de données
+    #### Config : dossier contenant les éléments de configuration de la base de données
 
-    ### Core : dossier contenant toutes les class génériques
+    #### Core : dossier contenant toutes les class génériques
         - Dossier Database : contient les méthodes permettant de se connecter à la base de données et de définir les types de requètes
         - Dossier Auth : contient les méthodes qui permettent aux utilisateurs de se connecter au back-end
         - Dossier Controller : Class parente à tous les controller de l'application
@@ -49,12 +49,12 @@ Base d'un projet de blog en php orienté objet avec la structure MVC
         - class Autoloader : autoloading des class spécifiques au dossier core
         - class Config : contient les fonctions en rapport avec la configuration de la base de données
 
-    ### public : dossier contenant tous les fichiers publics
+    #### public : dossier contenant tous les fichiers publics
         - Dossier css
         - Dossier js
         - index.php : racine du site (routeur)
 
-## 2 - code de connexion au back end :
+### 2 - code de connexion au back end :
 
 - pseudo : demo
 - mot de passe : demo
