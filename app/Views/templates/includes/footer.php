@@ -36,6 +36,7 @@ var chart = new Chart(ctx, {
 });
 </script>
 
+</script>
                 <hr>
 
                 <canvas id="myChart" height="75"></canvas>
