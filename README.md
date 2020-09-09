@@ -1,10 +1,10 @@
 # Dashboard-MVC-POO
 
-Base d'un projet de blog en php orienté objet avec la structure MVC
+Base du projet Dasboard en php orienté objet avec la structure MVC
 
-### 1 - Créer une structure de fichier comme ci-dessous
+### 1 - Structure des fichiers
 
-#### App : dossier contenant toutes les class spécifique de l'application. C'est le corps de l'application qui permet de tout gérer.
+#### App : dossier contenant toutes les class spécifiques de l'application. C'est le corps de l'application qui permet de tout gérer.
 
 1. Dossier Controller : Dossier contenant toute la logique de l'application
 - Dossier Admin : contient les class qui gèrent l'affichage du front end
