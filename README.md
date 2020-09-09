@@ -2,6 +2,8 @@
 
 Base du projet Dasboard en php orienté objet avec la structure MVC
 
+Articles (produits) / Catégories
+
 ### 1 - Structure des fichiers
 
 #### App : dossier contenant toutes les class spécifiques de l'application. C'est le corps de l'application qui permet de tout gérer.
