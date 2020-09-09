@@ -7,7 +7,7 @@
     require ROOT . '/app/App.php';
 
     //Chargement de l'autoloader
-		//Accès statique par opérateur de résolution de portée ::
+    //Accès statique par opérateur de résolution de portée ::
     App::load();
 
     //On vérifie qu'une variable url p existe,
