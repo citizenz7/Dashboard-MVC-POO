@@ -36,48 +36,68 @@
 <div class="row">
   <div class="col-sm-8">
     <hr>
+
     <canvas id="myChart" height="100"></canvas>
-    <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['bricolage', 'éléctroménager', 'multimedia', 'tv-hifi', 'voiture'],
-        datasets: [{
-          label: 'Prix moyen des produits en € par catégorie',
-          data: [49, 120, 60, 89, 66],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
-    </script>
+
+    <?php foreach ($posts as $post): ?>
+
+    <?php
+      $string[] = $post->prix;
+      $string2[] = "'" . $post->titre . "'";
+    ?>
+
+    <?php
+    //print_r($string1)
+    //echo $string2;
+    ?>
+
+    <?php endforeach; ?>
+
   </div>
   <div class="col-sm-4">
   </div>
 
 </div>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: [<?php echo implode(",", $string2); ?>],
+    //labels: ['Electroménager','Jardinage', 'dhfjdhfjdjf', 'errytuiii', 'msztfdhjghm', 'xslfjdshgjh'],
+    datasets: [{
+      label: 'Prix des articles en €',
+      data: [<?php echo implode(",", $string); ?>],
+      backgroundColor: poolColors([<?php echo implode(",", $string2); ?>].length),
+      borderColor: poolColors([<?php echo implode(",", $string2); ?>].length),
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+//random color rgba
+      function dynamicColors() {
+          var r = Math.floor(Math.random() * 255);
+          var g = Math.floor(Math.random() * 255);
+          var b = Math.floor(Math.random() * 255);
+          return "rgba(" + r + "," + g + "," + b + ", 0.5)";
+      }
+      //color with array.lenght for graph
+      function poolColors(a) {
+          var pool = [];
+          for(i =0 ; i <= a; i++) {
+              pool.push(dynamicColors());
+          }
+          return pool;
+      }
+</script>

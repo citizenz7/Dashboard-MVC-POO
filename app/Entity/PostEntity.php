@@ -26,4 +26,14 @@
             $html .= '<p><a href="' . $this->getUrl() . '">Voir la suite</a></p>';
             return $html;
         }
+
+        /**
+         * Retourne le prix de l'article
+         * @return string
+         */
+        public function getPrix()
+        {
+          return $this->prix;
+        }
+
     }

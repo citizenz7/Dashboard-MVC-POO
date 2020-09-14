@@ -72,4 +72,19 @@
                 true
             );
         }
+
+
+        /**
+         * Récupère le prix des articles pour le graphique
+         * @return App\Entity\PostEntity
+         */
+        public function prixPosts()
+        {
+            return $this->query("
+                SELECT articles.id, articles.prix, categories.titre as categorie
+                FROM articles
+                LEFT JOIN categories ON category_id = categories.id
+            ");
+        }
+
     }
