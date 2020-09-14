@@ -4,7 +4,8 @@
 
     use Core\Database\Database;
 
-    class DBAuth{
+    class DBAuth
+    {
 
         //stocker la connexion à la BDD au niveau de l'instance
         private $db;
@@ -13,7 +14,8 @@
         /**
          * Récupérer une instance de la connexion à la BDD
         */
-        public function __construct(Database $db){
+        public function __construct(Database $db)
+        {
             $this->db = $db;
         }
 
@@ -22,8 +24,9 @@
          * Si l'utilisateur est connecté on retourne son id
          * @return $_SESSION['auth'];
          */
-        public function getUserId(){
-            if($this->logged()){
+        public function getUserId()
+        {
+            if ($this->logged()) {
                 return $_SESSION['auth'];
             }
             return false;
@@ -38,11 +41,12 @@
          * @param  $password
          * @return boolean
          */
-         public function login($username, $password){
+        public function login($username, $password)
+        {
             $user = $this->db->prepare('SELECT * FROM users WHERE username = ?', [$username], null, true);
 
-            if($user){
-                if($user->password === sha1($password)){
+            if ($user) {
+                if ($user->password === sha1($password)) {
                     $_SESSION['auth'] = $user->id;
                     return true;
                 }
@@ -54,7 +58,8 @@
          * Vérifier que l'utilisateur est connecté
          * @return $_SESSION['auth']
          */
-        public function logged(){
+        public function logged()
+        {
             return isset($_SESSION['auth']);
         }
 
@@ -63,10 +68,8 @@
          * Déconnexion de l'utilisateur
          * avec la fonction php session_destroy
         */
-        public function logout() {
-          return session_destroy();
+        public function logout()
+        {
+            return session_destroy();
         }
-
     }
-
-?>

@@ -4,7 +4,8 @@
 
     use Core\Database\Database;
 
-    class Table{
+    class Table
+    {
 
         //Stocker le nom de la table
         protected $table;
@@ -20,9 +21,10 @@
          * stocker le dernier élément du tableau $parts
          * mettre le nom de la class en minuscule et remplacer le mot table par du vide
          */
-        public function __construct(Database $db){
+        public function __construct(Database $db)
+        {
             $this->db = $db;
-            if(is_null($this->table)){
+            if (is_null($this->table)) {
                 $parts = explode('\\', get_class($this));
                 $class_name = end($parts);
                 $this->table = strtolower(str_replace('Table', '', $class_name)) . 's';
@@ -34,7 +36,8 @@
          * Récupérer tous les articles
          * @return string  la requète sql
          */
-        public function all(){
+        public function all()
+        {
             return $this->query("SELECT * FROM " . $this->table);
         }
 
@@ -46,7 +49,8 @@
          * @param  $id
          * @return array
          */
-        public function find($id){
+        public function find($id)
+        {
             return $this->query("SELECT * FROM {$this->table} WHERE id = ?", [$id], true);
         }
 
@@ -57,7 +61,8 @@
          * @param  $fields
          * @return array requète sql
          */
-        public function update($id, $fields){
+        public function update($id, $fields)
+        {
             $sql_parts = [];
             $attributes = [];
 
@@ -80,7 +85,8 @@
          * @param  $id
          * @return array  Requète sql
          */
-        public function delete($id){
+        public function delete($id)
+        {
             return $this-> query("DELETE FROM {$this->table} WHERE id = ?", [$id], true);
         }
 
@@ -91,7 +97,8 @@
          * @param  $fields Champs de la BDD
          * @return array   la requète sql
          */
-        public function create($fields){
+        public function create($fields)
+        {
             $sql_parts = [];
             $attributes = [];
 
@@ -115,7 +122,8 @@
           * @param  $value valeur des enregistrements du select à extraire
           * @return array
           */
-        public function extract($key, $value){
+        public function extract($key, $value)
+        {
             $records = $this->all();
             $return = [];
             foreach ($records as $v) {
@@ -133,16 +141,16 @@
           * @param  boolean $one Afficher un ou plusieurs résultats
           * @return array
           */
-        public function query($statement, $attributes = null, $one = false){
-            if($attributes){
+        public function query($statement, $attributes = null, $one = false)
+        {
+            if ($attributes) {
                 return $this->db->prepare(
                     $statement,
                     $attributes,
                     str_replace('Table', 'Entity', get_class($this)),  //Remplacer Table par Entity dans le nom de class
                     $one
                 );
-            }
-             else{
+            } else {
                 return $this->db->query(
                     $statement,
                     str_replace('Table', 'Entity', get_class($this)),  //Remplacer Table par Entity dans le nom de class
@@ -150,7 +158,4 @@
                 );
             }
         }
-
     }
-
-?>

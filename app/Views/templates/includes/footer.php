@@ -14,7 +14,7 @@
 
                 <br>
 
-                <div class="row">
+                <!-- <div class="row">
                   <div class="col-sm-8">
                     <hr>
                     <canvas id="myChart" height="100"></canvas>
@@ -61,7 +61,7 @@
                   <div class="col-sm-4">
                   </div>
 
-                </div>
+                </div> -->
 
             </div>
         </div><!-- /.container -->

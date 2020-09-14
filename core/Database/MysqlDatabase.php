@@ -4,7 +4,8 @@
 
     use \PDO;
 
-    class MysqlDatabase extends Database{
+    class MysqlDatabase extends Database
+    {
 
         //Initialiser les paramètres de connexion à la BDD
         private $db_name;
@@ -23,7 +24,8 @@
          * @param string $db_pass
          * @param string $db_host
          */
-        public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost'){
+        public function __construct($db_name, $db_user = 'root', $db_pass = '', $db_host = 'localhost')
+        {
 
             //Initialiser les paramètres de connexion à la BDD en fonction des paramètre du constructeur
             $this->db_name = $db_name;
@@ -38,9 +40,10 @@
          * Exécuter la connexion à la BDD une seule fois
          * @return string  la propriété pdo
          */
-        private function getPDO(){
+        private function getPDO()
+        {
             //si le connexion à la BDD n'est pas établi
-            if($this->pdo === null){
+            if ($this->pdo === null) {
 
                 //Créer une instance de l'objet PDO
                 $pdo = new PDO('mysql:dbname=mvc-blog;host=localhost', 'root', '');
@@ -62,33 +65,33 @@
          * @param  class_name  le nom de la class
          * @return string
          */
-        public function query($statement, $class_name = null, $one = false){
+        public function query($statement, $class_name = null, $one = false)
+        {
             $req = $this->getPDO()->query($statement);   //stocker tous les articles.
 
             //Si on a une requète UPDATE, INSERT ou DELETE retourner le résultat de $req
-            if(
+            if (
                 strpos($statement, 'UPDATE') === 0 ||
                 strpos($statement, 'INSERT') === 0 ||
                 strpos($statement, 'DELETE') === 0
-            ){
+            ) {
                 return $req;
             }
 
             //si le nom de la class n'est pas défini
-            if($class_name === null){
+            if ($class_name === null) {
                 $req->setFetchMode(PDO::FETCH_OBJ);  //définir en objet basique
-            }
-            else{
+            } else {
                 $req->setFetchMode(PDO::FETCH_CLASS, $class_name);  //récupère les résultats
             }
 
 
             //Si on veut afficher un seul article
-            if($one){
+            if ($one) {
                 $datas = $req->fetch();
             }
             //sinon on affiche tous les résultats
-            else{
+            else {
                 $datas = $req->fetchAll();
             }
             return $datas;  //récupérer les résultats
@@ -103,33 +106,33 @@
          * @param  boolean $one  le nombre d'articles à afficher
          * @return string
          */
-        public function prepare($statement, $attributes, $class_name = null, $one = false){
+        public function prepare($statement, $attributes, $class_name = null, $one = false)
+        {
             $req = $this->getPDO()->prepare($statement);  //définit une requête préparé
             $res = $req->execute($attributes);   //exécuter la requète en fonction des paramètres
 
             //Si on a une requète UPDATE, INSERT ou DELETE retourner le résultat de $res
-            if(
+            if (
                 strpos($statement, 'UPDATE') === 0 ||
                 strpos($statement, 'INSERT') === 0 ||
                 strpos($statement, 'DELETE') === 0
-            ){
+            ) {
                 return $res;
             }
 
             //si le nom de la class n'est pas défini
-            if($class_name === null){
+            if ($class_name === null) {
                 $req->setFetchMode(PDO::FETCH_OBJ);  //définir en objet basique
-            }
-            else{
+            } else {
                 $req->setFetchMode(PDO::FETCH_CLASS, $class_name);  //récupère les résultats
             }
 
             //Si on veut afficher un seul article
-            if($one){
+            if ($one) {
                 $datas = $req->fetch();
             }
             //sinon on affiche tous les résultats
-            else{
+            else {
                 $datas = $req->fetchAll();
             }
             return $datas;
@@ -140,11 +143,8 @@
          * Récupérer l'id du dernier article ajouté dans la BDD
          * @return int
          */
-        public function lastInsertId(){
+        public function lastInsertId()
+        {
             return $this->getPdo()->lastInsertId();
         }
-
     }
-
-
-?>

@@ -4,13 +4,9 @@
 
     use Core\Table\Table;
 
+    class CategoryTable extends Table
+    {
 
-
-    class CategoryTable extends Table{
-
-    	//définir un nom de table pour les catégories
-    	protected $table = 'categories'; 
-
+        //définir un nom de table pour les catégories
+        protected $table = 'categories';
     }
-
-?>

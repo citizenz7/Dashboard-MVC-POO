@@ -2,8 +2,8 @@
 
   namespace Core\HTML;
 
-  class Form{
-
+  class Form
+  {
       public $data = array();   //stocke les données dans un tableau
       public $surround = 'p';
 
@@ -12,8 +12,9 @@
        * Constructeur
        * @param array $data  optionnel les données
        */
-      public function __construct($data = array()){
-        $this->data = $data;
+      public function __construct($data = array())
+      {
+          $this->data = $data;
       }
 
 
@@ -22,8 +23,9 @@
        * @param  $html  Balise html
        * @return string
        */
-      protected function surround($html){
-        return "<{$this->surround}>$html</{$this->surround}>";   //ajouter les accolades pour que la variable soit interprété par les quotes
+      protected function surround($html)
+      {
+          return "<{$this->surround}>$html</{$this->surround}>";   //ajouter les accolades pour que la variable soit interprété par les quotes
       }
 
       /**
@@ -32,11 +34,11 @@
        * @param  $index
        * @return string
        */
-      protected function getValue($index){
-          if(is_object($this->data)){
+      protected function getValue($index)
+      {
+          if (is_object($this->data)) {
               return $this->data->$index;
-          }
-          else{
+          } else {
               return isset($this->data[$index]) ? $this->data[$index] : null;
           }
       }
@@ -48,7 +50,8 @@
        * @param  $options array
        * @return [string
        */
-      public function input($name, $label, $options = []){
+      public function input($name, $label, $options = [])
+      {
           //stocker le type de champs
           $type = isset($options['type']) ? $options['type'] : 'text';
 
@@ -56,14 +59,14 @@
               '<input type="'. $type . '" name="' . $name . '" value="' . $this->getValue($name) .'"/>'
           );
       }
-      
+
 
       /**
        * Modifier la méthode qui affiche le bouton submit du formulaires
        * @return string
        */
-      public function submit(){
-        return $this->surround('<button type="submit">Envoyer</button>');
+      public function submit()
+      {
+          return $this->surround('<button type="submit">Envoyer</button>');
       }
   }
-?>

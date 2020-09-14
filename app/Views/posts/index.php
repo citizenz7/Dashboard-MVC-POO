@@ -2,9 +2,9 @@
 	<div class="col-sm-8">
 		<!-- AFFICHER LES ARTICLES  -->
 		<?php
-		    //Lister les articles et les stocker dans une variable post
-		    foreach ($posts as $post) :
-		?>
+            //Lister les articles et les stocker dans une variable post
+            foreach ($posts as $post) :
+        ?>
 		        <!-- Afficher les articles -->
 		        <h2><a href="<?= $post->url; ?>"><?= $post->titre; ?></a></h2>
 		        <p><em><?= $post->categorie; ?></em></p>
